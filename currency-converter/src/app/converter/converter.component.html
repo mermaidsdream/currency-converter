@@ -1,16 +1,20 @@
 <div class="converter">
-    <input type="number" [(ngModel)]="amount1" (input)="onAmountChange()">
-    <select [(ngModel)]="currency1" (change)="onCurrencyChange()">
+    <input class="input-one" type="number" [(ngModel)]="amount1" (input)="onAmountChange()">
+    <select class="select-one" [(ngModel)]="currency1" (change)="onCurrencyChange()">
       <option value="USD">USD</option>
       <option value="EUR">EUR</option>
       <option value="UAH">UAH</option>
+      <option value="PLN">PLN</option>
+      <option value="CAD">CAD</option>
     </select>
 
-    <input type="number" [(ngModel)]="amount2" (input)="onAmountChange()">
-    <select [(ngModel)]="currency2" (change)="onCurrencyChange()">
+    <input class="input-second" type="number" [(ngModel)]="amount2" (input)="onAmountChange()">
+    <select class="select-second" [(ngModel)]="currency2" (change)="onCurrencyChange()">
       <option value="USD">USD</option>
       <option value="EUR">EUR</option>
       <option value="UAH">UAH</option>
+      <option value="PLN">PLN</option>
+      <option value="CAD">CAD</option>
     </select>
   </div>
 
