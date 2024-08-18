@@ -1,20 +1,23 @@
 <div class="converter">
-    <input class="input-one" type="number" [(ngModel)]="amount1" (input)="onAmountChange()">
-    <select class="select-one" [(ngModel)]="currency1" (change)="onCurrencyChange()">
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="UAH">UAH</option>
-      <option value="PLN">PLN</option>
-      <option value="CAD">CAD</option>
-    </select>
+    <form [formGroup]="converterForm" (ngSubmit)="onConvert()">
+      <app-custom-input class="input-one" type="number" formControlName="amount1" (input)="onAmountChange()"></app-custom-input>
+      <select class="select-one" formControlName="currency1" (change)="onCurrencyChange()">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="UAH">UAH</option>
+        <option value="PLN">PLN</option>
+        <option value="CAD">CAD</option>
+      </select>
 
-    <input class="input-second" type="number" [(ngModel)]="amount2" (input)="onAmountChange()">
-    <select class="select-second" [(ngModel)]="currency2" (change)="onCurrencyChange()">
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="UAH">UAH</option>
-      <option value="PLN">PLN</option>
-      <option value="CAD">CAD</option>
-    </select>
+      <app-custom-input class="input-second" type="number" formControlName="amount2" (input)="onAmountChange()"></app-custom-input>
+      <select class="select-second" formControlName="currency2" (change)="onCurrencyChange()">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="UAH">UAH</option>
+        <option value="PLN">PLN</option>
+        <option value="CAD">CAD</option>
+      </select>
+      <button (click)="onConvert()" type="submit">Convert</button>
+    </form>
   </div>
 

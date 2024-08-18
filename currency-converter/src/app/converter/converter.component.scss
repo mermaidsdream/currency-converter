@@ -1,4 +1,7 @@
 .converter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     border-radius: 15px;
     height: 15rem;
@@ -11,6 +14,16 @@
     backdrop-filter: blur(10px);
 }
 
+.converter input,
+.converter select {
+    width: 80%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 input, select {
     font-family: 'Arial', sans-serif;
     font-size: 16px;
@@ -21,7 +34,6 @@ input, select {
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
-    margin: 8px 0;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -33,12 +45,14 @@ input:focus, select:focus {
 
 .input-one {
     background-color: #f9f9f9;
-    margin: 4rem 0 15rem 1.3rem;
+    margin-left: 1rem;
+    border-radius: 15px;
 }
 
 .input-second {
     background-color: #f0f0f0;
-    margin: 1rem 0 15rem 1.3rem;
+    margin-left: 1rem;
+    border-radius: 15px;
 }
 
 .select-one {
@@ -49,6 +63,7 @@ input:focus, select:focus {
 .select-second {
     background-color: #f0f0f0;
     cursor: pointer;
+    margin-right: 1rem;
 }
 
 input:hover, select:hover {
@@ -73,4 +88,22 @@ input:hover, select:hover {
         font-size: 14px;
         padding: 6px;
     }
+}
+
+button {
+    margin-left: 45%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+button:hover {
+    background-color: #322546;
+    color: #f1f1f1;
 }
