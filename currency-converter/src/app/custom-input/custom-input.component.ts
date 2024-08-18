@@ -22,6 +22,7 @@ export class CustomInputComponent implements ControlValueAccessor {
 
   writeValue(value: any) {
     this.value = value;
+    this.onChange(Number(this.value));
   }
 
   registerOnChange(fn: any) {

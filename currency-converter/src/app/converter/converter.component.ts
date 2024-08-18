@@ -32,28 +32,11 @@ export class ConverterComponent implements OnInit, OnDestroy {
     });
   }
 
-  onConvert(): void {
-    const { amount1, currency1, currency2 } = this.converterForm.value;
-
-    console.log('amount1:', amount1);
-    console.log('currency1:', currency1);
-    console.log('currency2:', currency2);
-    console.log('rates:', this.rates);
-
-    const rate1 = this.rates[currency1];
-    const rate2 = this.rates[currency2];
-    const convertedAmount = (amount1 / rate1) * rate2;
-    console.log(convertedAmount);
-
-    this.converterForm.patchValue({ amount2: convertedAmount });
-  }
-
   ngOnInit(): void {
     this.exchangeRateSubscription = this.exchangeRateService.getExchangeRates()
     .pipe(
       tap((data) => {
         this.rates = data.rates;
-        // this.convertCurrency();
         this.onConvert();
       }),
       catchError((error) => {
@@ -73,6 +56,16 @@ export class ConverterComponent implements OnInit, OnDestroy {
     }
   }
 
+  onConvert(): void {
+    const { amount1, currency1, currency2 } = this.converterForm.value;
+
+    const rate1 = this.rates[currency1];
+    const rate2 = this.rates[currency2];
+    const convertedAmount = (amount1 / rate1) * rate2;
+
+    this.converterForm.patchValue({ amount2: convertedAmount });
+  }
+
   onAmountChange(): void {
     this.onConvert();
   }
@@ -81,4 +74,3 @@ export class ConverterComponent implements OnInit, OnDestroy {
     this.onConvert();
   }
 }
-

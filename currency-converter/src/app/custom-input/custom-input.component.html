@@ -1,1 +1,1 @@
-<input [(ngModel)]="value" (blur)="onTouched()">
+<input [(ngModel)]="value" (ngModelChange)="onChange($event)" (blur)="onTouched()">
